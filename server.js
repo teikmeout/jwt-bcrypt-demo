@@ -14,4 +14,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'dist')));
 
+const userRoute = require('./routes/user');
+
+app.use('/user', userRoute);
 app.listen(PORT, () => {console.log('Overpriced organic artisanal tacos on port', PORT)});
